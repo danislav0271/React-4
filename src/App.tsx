@@ -35,13 +35,9 @@ function App() {
     <div className="App">
       <Header />
       
-      {robots && robots.filter(robot => robot == robots[activeIndex])
-        .map((robot) => 
-        <RobotSection key={robots.indexOf(robot)} id={robots.indexOf(robot)} robot={robot}/>
-        )
-      }
+      {robots.length !== 0 && <RobotSection id={robots.indexOf(robots[activeIndex])} robot={robots[activeIndex]}/>}
 
-      {robots.length != 0 && <SliderButtons prevSlide={prevSlide} nextSlide={nextSlide}/>}
+      {robots.length !== 0 && <SliderButtons prevSlide={prevSlide} nextSlide={nextSlide}/>}
 
       <RobotForm createRobot={createRobot}/>
     </div>
